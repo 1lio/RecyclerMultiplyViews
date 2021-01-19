@@ -12,16 +12,16 @@ import org.sample.view.rows.Row
 object ViewHolderFactory {
 
     class TextViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val textView: TextView = view.findViewById(R.id.textView)
+        val textView: TextView = view.findViewById(R.id.textView1)
     }
 
     class ImageViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val imgView: AppCompatImageView = view.findViewById(R.id.imageView)
+        val imgView: AppCompatImageView = view.findViewById(R.id.imageView1)
     }
 
     class ImageTextViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val textView: TextView = view.findViewById(R.id.textView)
-        val imgView: AppCompatImageView = view.findViewById(R.id.imageView)
+        val textView: TextView = view.findViewById(R.id.textView2)
+        val imgView: AppCompatImageView = view.findViewById(R.id.imageView2)
     }
 
     fun create(parent: ViewGroup, itemType: Int): RecyclerView.ViewHolder {
