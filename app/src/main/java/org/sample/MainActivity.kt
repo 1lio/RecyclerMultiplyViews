@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import org.sample.view.adapter.RowRecyclerAdapter
 import org.sample.view.rows.ImageRow
 import org.sample.view.rows.ImageTextRow
 import org.sample.view.rows.Row
@@ -24,16 +25,14 @@ class MainActivity : AppCompatActivity() {
 
         val images = listOf(R.drawable.ic_01, R.drawable.ic_02, R.drawable.ic_03)
 
-        val randomImage = images[images[Random.nextInt(0, 2)]]
-
         for (i in 0..14) {
             when (random.nextInt(3)) {
                 Row.TEXT -> items.add(TextRow("Item: $i"))
-                Row.IMAGE -> items.add(ImageRow(randomImage))
-                Row.IMAGE_AND_TEXT -> items.add(ImageTextRow("Item: $i", randomImage))
+                Row.IMAGE -> items.add(ImageRow(images[1]))
+                Row.IMAGE_AND_TEXT -> items.add(ImageTextRow("Item: $i", images[0]))
             }
         }
 
-
+        recycler.adapter = RowRecyclerAdapter(items)
     }
 }
